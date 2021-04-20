@@ -2,6 +2,7 @@
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class Supermarket {
     Map<String, Sweetness> sweetnessesMap;
@@ -17,18 +18,18 @@ public class Supermarket {
 
     public void setPackagingsMap(List<Packaging> packagings) {
         this.packagingsMap = new HashMap<>();
-        for (int i = 0; i < packagings.size(); i++) {
-            this.packagingsMap.put(packagings.get(i).getName(), packagings.get(i));
+        for (Packaging packaging : packagings) {
+            this.packagingsMap.put(packaging.getName(), packaging);
         }
 
     }
 
-    public Map<String, Sweetness> getSweetnesses() {
-        return sweetnessesMap;
+    public Set<String> getSweetnesses() {
+        return this.sweetnessesMap.keySet();
     }
 
-    public Map<String, Packaging> getPackagings() {
-        return packagingsMap;
+    public Set<String> getPackagings() {
+        return this.packagingsMap.keySet();
     }
 
     public Packaging purchasePackaging(String str) {

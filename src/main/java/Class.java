@@ -29,7 +29,7 @@ public class Class {
     public static Packaging selectedPackaging(Supermarket supermarket) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ваш выбор из предложенных: ");
-        System.out.println(supermarket.getPackagings().keySet());
+        System.out.println(supermarket.getPackagings());
         String str = scanner.nextLine();
 
         return supermarket.purchasePackaging(str);
@@ -38,7 +38,7 @@ public class Class {
     public static List<Sweetness> selectedSweetness(Supermarket supermarket) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("выберите сладость из предложенных или введите (выход) для завершения выбора:");
-        System.out.println(supermarket.getSweetnesses().keySet());
+        System.out.println(supermarket.getSweetnesses());
 
         List<Sweetness> sweetnesses = new ArrayList<>();
         String userInput = "";
